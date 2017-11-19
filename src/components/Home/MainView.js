@@ -64,7 +64,7 @@ const TagFilterTab = props => {
   );
 };
 
-@inject('articlesStore', 'commonStore', 'userStore')
+@inject('articlesStore', 'commonStore', 'userStore', 'commonStore')
 @withRouter
 @observer
 export default class MainView extends React.Component {
@@ -84,6 +84,7 @@ export default class MainView extends React.Component {
     ) {
       this.props.articlesStore.setPredicate(this.getPredicate());
       this.props.articlesStore.loadArticles();
+      console.log('$$$$',this.props);
     }
   }
 
